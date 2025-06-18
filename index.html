@@ -11,8 +11,9 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- NAVBAR -->
+    <!-- Navbar Start -->
     <nav class="navbar">
       <div class="logo">Kenangan<span>senja</span>.</div>
 
@@ -23,15 +24,15 @@
         <a href="#contact">Kontak</a>
       </div>
 
-      <!-- Extra Icons -->
       <div class="navbar-extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
+    <!-- Navbar End -->
 
-    <!-- Hero Section (opsional kamu kembangkan) -->
+    <!-- Hero Section Start -->
     <section class="hero" id="home">
       <main class="content">
         <h1>Mari Nikmati Secangkir <span>Kopi</span></h1>
@@ -39,17 +40,31 @@
         <a href="#" class="cta">Beli Sekarang</a>
       </main>
     </section>
+    <!-- Hero Section End -->
 
-    <!-- Feather Icons Script -->
-    <script>
-      feather.replace();
+    <!-- about section start -->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
 
-      const hamburger = document.getElementById("hamburger-menu");
-      const navLinks = document.getElementById("navLinks");
+      <div class="row">
+        <div class="about-img">
+          <img src="img/about.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa memilih kopi kami?</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+            laborum voluptas, quasi amet numquam expedita.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+            quis distinctio voluptate sed? Cupiditate praesentium.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      hamburger.onclick = () => {
-        navLinks.classList.toggle("active");
-      };
-    </script>
-  </body>
-</html>
+    <!-- about section end -->
+            </body>
+
+            </html>

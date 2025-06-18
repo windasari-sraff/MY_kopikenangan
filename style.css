@@ -1,8 +1,10 @@
+/* ROOT VARIABLES */
 :root {
   --primary: #b6895b;
   --bg: #010101;
 }
 
+/* RESET STYLE */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,7 @@ body {
   min-height: 100vh;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -51,6 +53,11 @@ body {
 .nav-links a {
   color: white;
   font-size: 1rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
 }
 
 .navbar-extra {
@@ -64,12 +71,17 @@ body {
   font-size: 1.5rem;
 }
 
-/* Hero Section */
+#hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   background-image: url('img/bg.jpg.jpg');
   background-size: cover;
   background-position: center;
@@ -101,66 +113,55 @@ body {
 }
 
 .hero .content h1 span {
+  color: var(--primary)
+}
+
+/* about section */
+.about,
+.menu,
+.contact {
+  padding: 10rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
   color: var(--primary);
 }
 
-.hero .content p {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
   line-height: 1.6;
-}
-
-.hero .content .cta {
-  margin-top: 1.5rem;
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  background-color: var(--primary);
-  color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    flex-direction: column;
-    background-color: white;
-    width: 250px;
-    padding: 2rem 1rem;
-    transition: 0.3s;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-links a {
-    color: black;
-    margin: 1rem 0;
-    font-size: 1.2rem;
-  }
-
-  #hamburger-menu {
-    display: block;
-  }
-}
-
-@media (max-width: 450px) {
-  html {
-    font-size: 90%;
-  }
-
-  .hero .content h1 {
-    font-size: 3rem;
-  }
-
-  .hero .content p {
-    font-size: 1rem;
-  }
 }
