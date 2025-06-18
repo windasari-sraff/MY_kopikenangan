@@ -1,4 +1,4 @@
-// Toggle classs active
+// Toggle classs activeAdd commentMore actions
 const navbarNav = document.querySelector(".navbar-nav");
 
 // ketika hamburger menu di klik
@@ -12,5 +12,5 @@ const hamburger = document.querySelector("#hamburger-menu");
 document.addEventListener("click", function (e) {
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
-  }
+  }
 });
