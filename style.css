@@ -4,17 +4,19 @@
 }
 
 * {
-    margin: O;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
-body{
+
+body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
-  color: #fff;
+  color: white;
+  min-height: 100vh;
 }
 
 /* Navbar */
@@ -22,57 +24,72 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 7%;
-  background-color: rgba(1, 1, 1, 0.8);
-  border-bottom: 1px solid #513c28;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
+  width: 100%;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+  z-index: 1000;
 }
 
-.navbar .navbar-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
 }
-.navbar .navbar-logo span {
+
+.logo span {
   color: var(--primary);
 }
 
-.navbar .navbar-nav a {
-  color: #fff;
-  display: inline-block;
-  font-size: 1.3rem;
-  margin: 0 1rem;
+.nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
-.navbar .navbar-nav a:hover {
-  color: var(--primary);
+.nav-links a {
+  color: white;
+  font-size: 1rem;
 }
 
-.navbar .navbar-nav a::after {
-  content: "";
-  display: block;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid var(--primary);
-  transform: scaleX(0);
-  transition: 0.2s linear;
+/* Extra Icons */
+.navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.navbar .navbar-nav a:hover::after {
-  transform: scaleX(0.5);
+.navbar-extra a {
+  color: white;
+  font-size: 1.5rem;
 }
 
-.navbar .navbar-extra a {
-  color: #fff;
-  margin: 0 0.5rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    flex-direction: column;
+    background-color: white;
+    width: 250px;
+    padding: 2rem 1rem;
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: black;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
 }
 
 
-
-
-
-
-}
