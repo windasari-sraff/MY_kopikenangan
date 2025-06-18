@@ -76,6 +76,50 @@ body {
   cursor: pointer;
 }
 
+
+
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1); /* Perbaikan */
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  color: var(--bg);
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5rem;
+}
+
+
+
+
+
+
 /* HERO SECTION */
 .hero {
   min-height: 100vh;
@@ -136,6 +180,8 @@ body {
 .contact h2 span {
   color: var(--primary);
 }
+
+
 
 .about .row {
   display: flex;
@@ -288,3 +334,39 @@ footer .credit a {
   font-weight: 700;
 }
 
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+
+
+
+
+  /* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+
+
+
+
+  #hamburger-menu {
+    display: inline-block;
+  }
