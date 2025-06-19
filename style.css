@@ -645,7 +645,10 @@ footer .credit a {
     height: 30rem;
   }
 
-  
+  .contact .row form {
+    padding-top: 0;
+  }
+
 
 
 
