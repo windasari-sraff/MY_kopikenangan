@@ -38,3 +38,31 @@ document.addEventListener("click", function (e) {
     shoppingCart.classList.remove("active");
   }
 });
+
+
+
+const itemDetailModal = document.querySelector("#item-detail-modal");
+const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+const closeIcon = document.querySelector(".modal .close-icon");
+
+// Tampilkan modal saat tombol diklik
+itemDetailButtons.forEach((btn) => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+    itemDetailModal.style.display = "flex";
+  };
+});
+
+// Sembunyikan modal saat tombol close diklik
+closeIcon.onclick = (e) => {
+  e.preventDefault();
+  itemDetailModal.style.display = "none";
+};
+
+// Sembunyikan modal saat klik di luar konten modal
+window.onclick = (e) => {
+  if (e.target === itemDetailModal) {
+    itemDetailModal.style.display = "none";
+  }
+};
+
