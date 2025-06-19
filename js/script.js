@@ -1,65 +1,68 @@
-// Toggle class active pada navbar
+// Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
-const hamburger = document.querySelector("#hamburger-menu");
-hamburger.onclick = (e) => {
-  e.preventDefault();
+
+// ketika hamburger menu diklik
+const hm = document.querySelector("#hamburger-menu");
+hm.onclick = () => {
   navbarNav.classList.toggle("active");
 };
 
 // Toggle class active untuk search form
-const searchButton = document.querySelector("#search-button");
 const searchForm = document.querySelector(".search-form");
 const searchBox = document.querySelector("#search-box");
-searchButton.onclick = (e) => {
-  e.preventDefault();
+const sb = document.querySelector("#search-button");
+
+sb.onclick = (e) => {
   searchForm.classList.toggle("active");
   searchBox.focus();
+  e.preventDefault();
 };
 
 // Toggle class active untuk shopping cart
 const shoppingCart = document.querySelector(".shopping-cart");
-const cartButton = document.querySelector("#shopping-cart-button");
-cartButton.onclick = (e) => {
-  e.preventDefault();
+const sc = document.querySelector("#shopping-cart-button");
+
+sc.onclick = (e) => {
   shoppingCart.classList.toggle("active");
+  e.preventDefault();
 };
 
-// Klik di luar elemen untuk menutup menu yang aktif
+// Klik di luar elemen
 document.addEventListener("click", function (e) {
-  if (!navbarNav.contains(e.target) && !hamburger.contains(e.target)) {
+  // untuk navbar
+  if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
 
-  if (!searchForm.contains(e.target) && !searchButton.contains(e.target)) {
+  // untuk search form
+  if (!sb.contains(e.target) && !searchForm.contains(e.target)) {
     searchForm.classList.remove("active");
   }
 
-  if (!shoppingCart.contains(e.target) && !cartButton.contains(e.target)) {
+  // untuk shopping cart
+  if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
     shoppingCart.classList.remove("active");
   }
 });
 
-
-
+// modal box
 const itemDetailModal = document.querySelector("#item-detail-modal");
 const itemDetailButtons = document.querySelectorAll(".item-detail-button");
-const closeIcon = document.querySelector(".modal .close-icon");
 
-// Tampilkan modal saat tombol diklik
 itemDetailButtons.forEach((btn) => {
   btn.onclick = (e) => {
-    e.preventDefault();
     itemDetailModal.style.display = "flex";
+    e.preventDefault();
   };
 });
 
-// Sembunyikan modal saat tombol close diklik
-closeIcon.onclick = (e) => {
-  e.preventDefault();
+// klik tombol close modal
+document.querySelector(".modal .close-icon").onclick = (e) => {
   itemDetailModal.style.display = "none";
+  e.preventDefault();
 };
 
-// Sembunyikan modal saat klik di luar konten modal
+// klik di luar modal
 window.onclick = (e) => {
   if (e.target === itemDetailModal) {
     itemDetailModal.style.display = "none";
