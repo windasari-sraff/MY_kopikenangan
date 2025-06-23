@@ -187,6 +187,8 @@ body {
 */
 
 
+
+
 /* hero section */
 .hero {
   min-height: 100vh;
@@ -200,9 +202,11 @@ body {
   -webkit-mask-image:linear-gradient(rgba(0,0,0, 1), 90%, rgba(0,0,0,0)) ;
    -webkit-mask-image:linear-gradient(rgba(0,0,0, 1), 85%,  rgba(0,0,0,0)) ;
 
-
-
 }
+
+
+
+
 
 /* .hero::after {
   content: "";
@@ -217,6 +221,10 @@ body {
     rgba(255, 255, 255, 0) 50%
   );
 } */
+
+
+
+
 
 
 /* tambahkan styling dasar untuk container dan elemen di dalamnya */
@@ -258,6 +266,24 @@ body {
   color: #fff;
   background-color: var(--primary);
 }
+
+.hero .mask-container {
+    position: absolute;
+    /* background: salmon; */
+    inset: 0;
+    -webkit-mask-image:url('img/svgkopi.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-animation: cover;
+    -webkit-mask-position: center;
+
+}
+
+
+
+
+
+
+
 
 /* about section */
 .about,
