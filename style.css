@@ -271,11 +271,17 @@ body {
 }
 
 .about .row .about-img {
-  flex: 1 1 45rem;
+  flex: 1 1 50rem;
 }
 
 .about .row .about-img img {
-  width: 100%;
+  width: 80%;
+  -webkit-mask-image: url('img/splash.svg');
+  -webkit-mask-size: 60%; /* Ubah sesuai kebutuhan: 60% atau lebih besar */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
 }
 
 .about .row .content {
