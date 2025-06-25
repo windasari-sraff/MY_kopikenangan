@@ -83,8 +83,11 @@
             </div>
         </div>
         <!-- shopping cart end -->
+
     </nav>
-    <!-- Navbar end -->
+    <!-- Navbar end -->
+
+
 
     <!-- Hero Section start -->
     <section class="hero" id="home">
@@ -185,25 +188,56 @@
         </p>
 
         <div class="row">
-            <template x-for="(item, index) in items" x-key="index">
-                <div class="product-card">
-                    <div class="product-icons">
-                        <a href="#"><i data-feather="shopping-cart"></i></a>
-                        <a href="#" class="item-detail-buttom"><i data-feather="eye"></i></a>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
+           <template x-for="(item, index) in items" x-key="index">
+  <div class="product-card" x-init="$nextTick(() => feather.replace())">
+    <div class="product-icons">
+      <a href="#"><i data-feather="shopping-cart"></i></a>
+      <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+    </div>
+    <div class="product-image">
+      <img :src="`img/products/${item.img}`" :alt="item.name">
+    </div>
+    <div class="product-content">
+      <h3 x-text="item.name"></h3>
+      <div class="product-stars">
+        <i data-feather="star" class="star-full"></i>
+        <i data-feather="star" class="star-full"></i>
+        <i data-feather="star" class="star-full"></i>
+        <i data-feather="star" class="star-full"></i>
+        <i data-feather="star" class="star-full"></i>
+      </div>
+      <div class="product-price"><span x-text="item.price"></span></div>
+    </div>
+  </div>
+</template>
+
+    <svg
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  <use href="img/feather-sprite.svg#shooping-cart">
+  </use>
+</svg>
+            <a href="#" class="item-detail-buttom"><i data-feather="eye"></i></a>
+            </a>
+                </div>
+                   <div class="product-card">
+                    <div class="product-image">
                             <img :src="`img/products/${item.img}`" :alt="item.name">
                         </div>
                         <div class="product-content">
-                            <h3> Coffe Beans 1</h3>
+                            <h3 x-text="item.name"></h3>
                             <div class="product-stars">
                                 <i data-feather="star" class="star-full"></i>
                                 <i data-feather="star" class="star-full"></i>
                                 <i data-feather="star" class="star-full"></i>
                                 <i data-feather="star" class="star-full"></i>
                                 <i data-feather="star" class="star-full"></i>
-                                <div class="product-price">IDR 30K <spa>IDR55K</spa></div
+                                <div class="product-price"><span x-text="item.price"></span></div>
                             </div>
                         </div>
             </template>
