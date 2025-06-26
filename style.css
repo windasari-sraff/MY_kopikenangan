@@ -120,6 +120,22 @@ body {
 }
 
 /* shopping cart */
+#shopping-cart-button {
+  position: relative;
+}
+
+#shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  font-weight: bold;
+}
+
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -295,7 +311,7 @@ body {
 /* about section */
 .about,
 .menu,
-.products,
+,
 .contact {
   padding: 8rem 7% 1.4rem;
 }
@@ -405,13 +421,18 @@ body {
   margin-top: 1rem auto 0.5rem;
 }
 
+
+
+
 /* products section */
 .products .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* <<< tetap 3 kolom */
   gap: 1.5rem;
   margin-top: 4rem;
 }
+
+
 
 .products .product-card {
   text-align: center;
@@ -460,16 +481,8 @@ body {
   fill: var(--primary);
 }
 
-.products .product-price {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
 
-.products .product-price span {
-  text-decoration: line-through;
-  font-weight: lighter;
-  font-size: 1rem;
-}
+
 
 /* contact section */
 .contact .row {
