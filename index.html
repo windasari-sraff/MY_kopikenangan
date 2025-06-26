@@ -25,7 +25,7 @@
   <script src="src/app.js"></script>
 </head>
 
-<body>
+<nav>
   <!-- Navbar start -->
   <nav class="navbar" x-data>
     <a href="#" class="navbar-logo">Kenangan<span>senja</span>.</a>
@@ -47,23 +47,39 @@
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
 
+
+
+<!-- Search from start-->
     <div class="search-form">
       <input type="search" id="search-box" placeholder="search here..." />
       <label for="search-box"><i data-feather="search"></i></label>
     </div>
-    <div class="shopping-cart">
-      <div class="cart-item">
-        <img src="img/products/1.jpg" alt="Product 1" />
-        <div class="item-detail">
-          <h3>Coffee Mountain</h3>
-          <div class="item-price">IDR 35K</div>
+    <!-- Search from end-->
+
+
+  <!-- shopping cart start -->
+<div class="shopping-cart" x-data="products">
+  <template x-for="(item, index) in items" :key="index">
+    <div class="product-card">
+      <img :src="'img/products/' + item.img" :alt="item.name" />
+      <h3 x-text="item.name"></h3>
+      <div class="item-detail">
+        <div class="item-price">
+          <span x-text="Rupiah(item.price)"></span> &times;
+          <button id="remove">&minus;</button>
+          <span x-text="item.quantity"></span>
+          <button id="add">&plus;</button> &equals;
+          <span x-text="item.total"></span>
         </div>
-        <i data-feather="trash-2" class="remove-item"></i>
       </div>
-      <!-- Tambahkan cart-item lainnya jika perlu -->
     </div>
-  </nav>
-  <!-- Navbar end -->
+  </template>
+</div>
+<!-- shopping cart end -->
+
+</nav>
+ <!-- Navbar end -->
+
 
   <!-- Hero Section start -->
   <section class="hero" id="home">
