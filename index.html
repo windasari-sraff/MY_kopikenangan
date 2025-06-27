@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data>
 
 <head>
   <meta charset="UTF-8" />
@@ -27,7 +27,7 @@
 
 <body>
   <!-- Navbar start -->
-  <nav class="navbar" x-data>
+  <nav class="navbar">
     <a href="#" class="navbar-logo">Kenangan<span>senja</span>.</a>
     <div class="navbar-nav">
       <a href="#home">Home</a>
@@ -44,35 +44,62 @@
       </a>
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
+
     <!-- Search form start -->
     <div class="search-form">
       <input type="search" id="search-box" placeholder="search here..." />
       <label for="search-box"><i data-feather="search"></i></label>
     </div>
     <!-- Search form end -->
-    <!-- shopping cart start -->
-    <div class="shopping-cart" x-data>
+
+    <!-- Shopping cart start -->
+    <div class="shopping-cart">
       <template x-for="(item, index) in $store.cart.items" :key="index">
-        <div class="product-card">
+        <div class="cart-item">
           <img :src="'img/products/' + item.img" :alt="item.name" />
-          <h3 x-text="item.name"></h3>
           <div class="item-detail">
+            <h3 x-text="item.name"></h3>
             <div class="item-price">
               <span x-text="rupiah(item.price)"></span> &times;
               <button @click="$store.cart.decrease(item)" class="qty-btn">&minus;</button>
               <span x-text="item.quantity"></span>
-              <button @click="$store.cart.increase(item)" class="qty-btn">&plus;</button>
+              <button @click="$store.cart.increase(item)" class="qty-btn">&plus;</button> &equals;
               <span x-text="rupiah(item.total)"></span>
             </div>
           </div>
         </div>
       </template>
+
+      <h4 x-show="!$store.cart.items.length">Cart is Empty</h4>
+
+      <h4 x-show="$store.cart.items.length > 0">
+        Total : <span x-text="rupiah($store.cart.total)"></span>
+      </h4>
+
+      <div class="form-container" x-show="$store.cart.items.length > 0">
+        <form action="" id="checkoutfrom">
+          <h5>Customer Detail</h5>
+          <label for="name">
+            <span>Name</span>
+            <input type="text" name="name" id="name">
+          </label>
+          <label for="email">
+            <span>Email</span>
+            <input type="email" name="email" id="email">
+          </label>
+          <label for="phone">
+            <span>Phone</span>
+            <input type="number" name="phone" id="phone" autocomplete="off">
+          </label>
+          <button class="checkout-button" type="submit" id="checkout-button" value="Checkout">Checkout</button>
+        </form>
+      </div>
     </div>
-    <!-- shopping cart end -->
+    <!-- Shopping cart end -->
   </nav>
   <!-- Navbar end -->
 
-  <!-- Hero Section start -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="mask-container">
       <main class="content">
@@ -81,9 +108,8 @@
       </main>
     </div>
   </section>
-  <!-- Hero Section end -->
 
-  <!-- About Section start -->
+  <!-- About Section -->
   <section id="about" class="about">
     <h2><span>Tentang</span> Kami</h2>
     <div class="row">
@@ -97,26 +123,23 @@
       </div>
     </div>
   </section>
-  <!-- About Section end -->
 
-  <!-- Menu Section start -->
-<section id="menu" class="menu" x-data>
-  <h2><span>Menu</span> Kami</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-  <div class="row">
-    <template x-for="i in 6">
-      <div class="menu-card">
-        <img src="img/menu.jpg" alt="Espresso" class="menu-card-img" />
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-      </div>
-    </template>
-  </div>
-</section>
-<!-- Menu Section end -->
+  <!-- Menu Section -->
+  <section id="menu" class="menu" x-data>
+    <h2><span>Menu</span> Kami</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="row">
+      <template x-for="i in 6">
+        <div class="menu-card">
+          <img src="img/menu.jpg" alt="Espresso" class="menu-card-img" />
+          <h3 class="menu-card-title">- Espresso -</h3>
+          <p class="menu-card-price">IDR 15K</p>
+        </div>
+      </template>
+    </div>
+  </section>
 
-
-  <!-- Products Section start -->
+  <!-- Products Section -->
   <section class="products" id="products" x-data="products">
     <h2><span>Produk Unggulan</span> Kami</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo unde eum, ab fugit possimus iste.</p>
@@ -153,9 +176,8 @@
       </template>
     </div>
   </section>
-  <!-- Products Section end -->
 
-  <!-- Contact Section start -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2><span>Kontak</span> Kami</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -178,9 +200,8 @@
       </form>
     </div>
   </section>
-  <!-- Contact Section end -->
 
-  <!-- Footer start -->
+  <!-- Footer -->
   <footer>
     <div class="socials">
       <a href="#"><i data-feather="instagram"></i></a>
@@ -197,9 +218,8 @@
       <p>Created by <a href="">windasari</a>. | &copy; 2025.</p>
     </div>
   </footer>
-  <!-- Footer end -->
 
-  <!-- Modal Box start -->
+  <!-- Modal Box -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
       <a href="#" class="close-icon"><i data-feather="x"></i></a>
@@ -217,9 +237,8 @@
       </div>
     </div>
   </div>
-  <!-- Modal Box end -->
 
-  <!-- Feather Icons -->
+  <!-- Feather Icons Init -->
   <script>
     feather.replace();
   </script>

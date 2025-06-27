@@ -174,6 +174,12 @@ body {
   font-size: 1.4rem;
 }
 
+.shopping-cart h4 {
+  /* Tambahkan ini jika belum ada, atau edit jika sudah */
+  text-align: center;
+}
+
+
 .shopping-cart .item-price {
   font-size: 1.2rem;
 }
@@ -192,24 +198,31 @@ body {
 
 
 
+.cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.cart-item img {
+  height: 4rem;
+  border-radius: 70%;
+}
+
 .qty-btn {
   display: inline-block;
-  width: 28px;
-  height: 28px;
-  line-height: 28px;
+  padding: 2px 6px;
+  margin: 0 5px;
   font-size: 1.2rem;
   font-weight: bold;
-  text-align: center;
-  background-color: var(--bg);
+  background-color: #000;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 6px;
-  transition: background-color 0.2s;
-}
-
-.qty-btn:hover {
-  background-color:black;
 }
 
 
@@ -319,7 +332,54 @@ body {
 /* container utama untuk center layout */
 
 
+/* checkout form */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px dashed black;
+    margin-top: 1rem;
+    padding: 1rem;
+}
 
+.form-container h5 {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.form-container form {
+    width: 100%;
+    text-align: center;
+}
+
+.form-container label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.form-container span {
+    text-align: right;
+}
+
+.form-container input {
+    background-color: #ddd;
+    padding: 5px;
+    font-size: 1rem;
+    width: 70%;
+}
+
+.form-container .checkout-button {
+    padding: 6px 14px;
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 20px;
+    margin: 1rem auto;
+    cursor: pointer;
+}
 
 .hero .mask-container {
     position: absolute;
