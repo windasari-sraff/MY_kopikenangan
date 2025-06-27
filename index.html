@@ -61,7 +61,7 @@
               <span x-text="rupiah(item.price)"></span> &times;
               <button @click="$store.cart.decrease(item)" class="qty-btn">&minus;</button>
               <span x-text="item.quantity"></span>
-              <button @click="$store.cart.increase(item)" class="qty-btn">&plus;</button> &equals;
+              <button @click="$store.cart.increase(item)" class="qty-btn">&plus;</button>
               <span x-text="rupiah(item.total)"></span>
             </div>
           </div>
@@ -100,20 +100,21 @@
   <!-- About Section end -->
 
   <!-- Menu Section start -->
-  <section id="menu" class="menu">
-    <h2><span>Menu</span> Kami</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <div class="row">
-      <template x-for="i in 6">
-        <div class="menu-card">
-          <img src="img/menu.jpg" alt="Espresso" class="menu-card-img" />
-          <h3 class="menu-card-title">- Espresso -</h3>
-          <p class="menu-card-price">IDR 15K</p>
-        </div>
-      </template>
-    </div>
-  </section>
-  <!-- Menu Section end -->
+<section id="menu" class="menu" x-data>
+  <h2><span>Menu</span> Kami</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <div class="row">
+    <template x-for="i in 6">
+      <div class="menu-card">
+        <img src="img/menu.jpg" alt="Espresso" class="menu-card-img" />
+        <h3 class="menu-card-title">- Espresso -</h3>
+        <p class="menu-card-price">IDR 15K</p>
+      </div>
+    </template>
+  </div>
+</section>
+<!-- Menu Section end -->
+
 
   <!-- Products Section start -->
   <section class="products" id="products" x-data="products">

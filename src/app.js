@@ -19,31 +19,41 @@ document.addEventListener('alpine:init', () => {
 
   Alpine.store('cart', {
     items: [],
+
+    // Tambahkan produk ke keranjang
     add(item) {
       const found = this.items.find(i => i.id === item.id);
       if (found) {
-        found.quantity++;
-        found.total = found.quantity * found.price;
+        this.increase(found);
       } else {
         this.items.push({
           ...item,
           quantity: 1,
-          total: item.price
+          total: item.price,
         });
       }
     },
+
+    // Tambah quantity
     increase(item) {
       item.quantity++;
-      item.total = item.price * item.quantity;
+      item.total = item.quantity * item.price;
     },
+
+    // Kurangi quantity
     decrease(item) {
       if (item.quantity > 1) {
         item.quantity--;
-        item.total = item.price * item.quantity;
+        item.total = item.quantity * item.price;
+      } else {
+        // Jika 1 dan dikurangi, hapus dari keranjang
+        this.items = this.items.filter(i => i.id !== item.id);
       }
     },
+
+    // Jumlah total semua item di badge
     get quantity() {
-      return this.items.reduce((acc, i) => acc + i.quantity, 0);
+      return this.items.reduce((acc, item) => acc + item.quantity, 0);
     }
   });
 });

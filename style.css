@@ -190,6 +190,29 @@ body {
     font-size: 1.1rem;
 }
 
+
+
+.qty-btn {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--bg);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 6px;
+  transition: background-color 0.2s;
+}
+
+.qty-btn:hover {
+  background-color:black;
+}
+
+
 /*Add commentMore actions
   ✨ Perbedaan mask vs clip-path ✨
 
